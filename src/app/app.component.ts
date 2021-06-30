@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
-  name = 'Swapnil';
+  language: string = ''; // two-way binding
+  listOfLanguages: string[] = ["English", "Bengali", "Arabic"];
+
+  addLanguage() {
+    this.listOfLanguages.push(this.language);
+    console.log(this.listOfLanguages);
+  }
 }

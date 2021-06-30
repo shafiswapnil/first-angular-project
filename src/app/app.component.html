@@ -1,9 +1,13 @@
 <h1>World of Languages</h1>
 
-<input type="text" [(ngModel)]="language">
-<p>My language is {{ language }}</p>
+<label for="inputLang">
+	Input Language
+	<input type="text" id="inputLang" [(ngModel)]="language" />
+</label>
+<p>My language is <strong>{{ language }}</strong></p>
 
 <button (click)="addLanguage()">Add</button>
+<button (click)="deleteFirst()">Delete First Language</button>
 
 <h2>List of Languages</h2>
 
@@ -12,3 +16,14 @@
 		{{ lang }}
 	</li>
 </ul>
+
+<p *ngIf="listOfLanguages.length > 3">
+	<strong>Congrats! You know more than 3 languages of World</strong>
+</p>
+
+
+<!--
+- Q. What are *ngFor and *ngIf
+- Directives preceded with a * like *ngIf, *ngFor, and *ngSwitchCase are structural directives
+- Ref: https://www.joshmorony.com/an-introduction-to-structural-directives-ngif-ngfor/
+-->

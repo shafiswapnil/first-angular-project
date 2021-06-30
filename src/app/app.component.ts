@@ -11,6 +11,10 @@ export class AppComponent {
 
   addLanguage() {
     this.listOfLanguages.push(this.language);
-    console.log(this.listOfLanguages);
+  }
+
+  deleteFirst() {
+    // this.listOfLanguages.shift();
+    this.listOfLanguages.splice(0, 1);
   }
 }
